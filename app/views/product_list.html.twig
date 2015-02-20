@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>This is a test</title>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+</head>
+<style type="text/css">
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+	#product-list {
+		width: 1690px;
+		margin: 0 auto;
+	}
+
+	.product-div {
+		float: left;
+		text-align: center;
+		border: 1px solid #666;
+		width: 400px;
+		margin: 10px;
+		height: 400px;
+	}
+
+	.product-name {
+		display: block;
+		margin: 20px 0 0 0;
+	}
+
+	.product-image {
+		margin: 20px 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: #222;
+		opacity: 1;
+		transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+	}
+
+	a:hover {
+		opacity: 0.5;
+		transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+	}
+</style>
+<body>
+    <div id="product-list">
+	    {% for product in products %}
+	    	<div class="product-div">
+	    		<a href="products/{{product.product_id}}" class="product-name">{{product.name}}</a>
+	        	<a href="products/{{product.product_id}}"><img src="http://images.mobilefun.co.uk/graphics/300pixelp/--p{{ product.product_id }}-300.jpg" alt="{{ product.product_id }}" class="product-image"></a>
+	        </div>
+	    {% endfor %}
+	</div>
+</body>
+</html>
